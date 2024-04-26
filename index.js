@@ -41,7 +41,7 @@ const client = new MongoClient(uri, {
       const result = await itemsCollection.findOne(query)
       res.send(result)
   })
-     
+    //  
     app.post('/item',async(req,res)=>{
          const items = req.body 
          console.log(items,'result');
