@@ -56,6 +56,23 @@ const client = new MongoClient(uri, {
       res.send(result)
       console.log('id is delete');
     })
+    app.put('/item/:id', async(req,res)=>{
+      const id = req.params.id
+      const User = req.body
+      console.log(User);
+      const filter = {_id:new ObjectId(id)}
+      const options = {upsert: true}
+
+      const updateUser = {
+         $set:{
+            email: User.email
+         }
+      }
+      const result = await itemsCollection.updateOne(filter, updateUser,options)
+      res.send(result)
+     
+   })
+
       
       console.log("Pinged your deployment. You successfully connected to MongoDB!");
     } finally {
