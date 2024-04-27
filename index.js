@@ -62,16 +62,16 @@ const client = new MongoClient(uri, {
       const id = req.params.id
       const User = req.body
       console.log(User);
-      const filter = {_id:new ObjectId(id)}
-      const options = {upsert: true}
+      // const filter = {_id:new ObjectId(id)}
+      // const options = {upsert: true}
 
-      const updateUser = {
-         $set:{
-            email: User.email
-         }
-      }
-      const result = await itemsCollection.updateOne(filter, updateUser,options)
-      res.send(result)
+      // const updateUser = {
+      //    $set:{
+      //       email: User.email
+      //    }
+      // }
+      // const result = await itemsCollection.updateOne(filter, updateUser,options)
+      // res.send(result)
      
    })
 
